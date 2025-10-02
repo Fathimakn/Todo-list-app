@@ -1,0 +1,18 @@
+{% extends 'master.html' %}
+{% block title%}
+<title>ADD</title>
+{% endblock %}
+{% block content%}
+<ul class="nav-bar">
+    <li><a href="{% url 'logout' %}">logout</a></li>
+    <li><a href="{% url 'home' %}">home</a></li>
+
+</ul>
+<h1>ADD NEW TASK</h1>
+<form method="post">
+  {% csrf_token %}
+  {{form.as_p}}
+  <button type="submit">ADD</button>
+</form>
+
+{% endblock %}
